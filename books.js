@@ -6,7 +6,8 @@ let books = [
         pages: 345,
         author: 'Cornelia Funke',
         genre: ['Fantasy', 'Adventure'],
-        isbn: '978-0545227704'
+        isbn: '978-0545227704',
+        cost: 19.95
     },
     {
         title: 'The Go-Giver',
@@ -25,3 +26,7 @@ let books = [
 ];
 
 console.log("The title of the first book is: " + books[0].title)
+console.log(books[1].genre[1]);
+console.log(`Genre of the first book: ${books[0].title} is ${books[0].genre[1]}`);
+console.log(`The ${books[0].title} is an ${books[0].genre[1]} which cost $${books[0].cost}`);
+
