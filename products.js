@@ -56,3 +56,5 @@ let person2 = {
 
 let savedTheFullName = person2.fullname();
 console.log("Hi from person 1 the fullname is " + savedTheFullName)
+
+
