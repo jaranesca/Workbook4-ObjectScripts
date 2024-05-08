@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: whitesmoke;
+        }
+
+        #productInfoContainer {
+            width: 90%; /* Fit the width of the screen */
+            max-width: 300px; /* Keep a maximum width */
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center the content */
+        }
+
+        #productInfoContainer img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 20px; /* Decreased size for product name */
+            margin: 0 0 10px;
+        }
+
+        p {
+            margin: 0 0 10px;
+            font-size: 14px; /* Decreased size for other text */
+        }
+
+        .description {
+            font-size: 16px; /* Decreased size for description */
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+            font-size: 14px; /* Decreased size for list items */
+        }
+
+        button {
+            background-color: lightskyblue;
+            color: brown;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: lightcyan;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<button id="showProductInfo">CD Generator</button>
+
+<div id="productInfoContainer"></div>
+
+<script>
+    let productInformation = {
+        name: 'Charlies Angel CD',
+        description: 'Three highly skilled and glamorous private investigators, known as Charlies Angels, embark on daring missions to fight crime, using their expertise, wit, and teamwork to save the day.',
+        category: ["Action", "Adventure", "Fun"],
+        cost: 9.99,
+        quantity: 50,
+        features: {
+            genre: 'Action/Adventure',
+            runtime: '2 hours',
+            director: 'McG',
+            specialEffects: 'Explosive action sequences and high-flying stunts',
+        },
+        calculateTotalCost: function (quantity) {
+            return this.cost * quantity;
+        },
+        updateQuantity: function (newQuantity) {
+            this.quantity = newQuantity;
+        }
+    };
+
+    function displayProductInfo() {
+        let productInfoContainer = document.getElementById('productInfoContainer');
+        productInfoContainer.innerHTML = `
+            <img src="images/charlies.jpeg" alt="Product Image">
+            <h2>${productInformation.name}</h2>
+            <p class="description">Description: <br>${productInformation.description}</p>
+            <p>Category: <br> ${productInformation.category.join(', ')}</p>
+            <p>Cost: $${productInformation.cost}</p>
+            <p>Quantity Available: ${productInformation.quantity}</p>
+            <p>Features:</p>
+            <ul>
+                <li>Genre: ${productInformation.features.genre}</li>
+                <li>Runtime: ${productInformation.features.runtime}</li>
+                <li>Director: ${productInformation.features.director}</li>
+                <li> Special Effects: ${productInformation.features.specialEffects}</li>
+            </ul>
+            <p>Total cost for 5 units: $${productInformation.calculateTotalCost(5)}</p>
+        `;
+    }
+
+    document.getElementById('showProductInfo').addEventListener('click', displayProductInfo);
+</script>
+
+</body>
+</html>
