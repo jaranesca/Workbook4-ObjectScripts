@@ -15,6 +15,7 @@ let countdown = 10;
 
 while (countdown > 0) {
   console.log(`Countdown: ${countdown}`);
-  countdown--;
+  countdown--; 
 }
-console.log("Ready for launch!");
+
+console.log("Countdown: To the moon🚀!");
